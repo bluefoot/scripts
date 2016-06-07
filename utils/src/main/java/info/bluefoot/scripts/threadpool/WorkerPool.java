@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
  * Thread pool. <br />
  * This will create a number of threads that should be given at construction. <br />
  * While there's still something to be executed, the threads will work. After that,
- * they will not be avaliable anymore (i.e. die). So this is not an "infinite" pool. <br />
+ * they will not be available anymore (i.e. die). So this is not an "infinite" pool. <br />
  * Three steps: <br />
  * <ol>
  * <li>Instantiate and pass the number of threads in the pool</li>
@@ -30,6 +30,7 @@ public class WorkerPool {
     private final PoolWorker[] threads;
     private final LinkedList<Runnable> queue;
     private boolean started = false;
+    private Runnable finishedCallback;
     protected static final Logger logger = LoggerFactory.getLogger(WorkerPool.class);
 
     /**
@@ -52,7 +53,7 @@ public class WorkerPool {
      */
     public void add(Runnable r) {
         if(started) {
-            throw new RuntimeException("Sorry, the execution has already started. Come back in another life");
+            throw new RuntimeException("Can't add anymore jobs at this pont. The execution has already started.");
         }
         synchronized (queue) {
             logger.info(String.format("Adding a job to the queue"));
@@ -78,6 +79,8 @@ public class WorkerPool {
                 while(stillSomethingAlive()) {}
                 long time = (System.currentTimeMillis() - initialTime.getTime())/1000;
                 logger.info(String.format("Finished after %s seconds", String.valueOf(time)));
+                if(finishedCallback!=null)
+                    new Thread(finishedCallback).run();
             }
         }).start();
     }
@@ -94,6 +97,10 @@ public class WorkerPool {
             }
         }
         return false;
+    }
+    
+    public void setFinishedCallback(Runnable r) {
+        this.finishedCallback=r;
     }
 
     private class PoolWorker extends Thread {

@@ -21,9 +21,9 @@ limitations under the License.
   <groupId>info.bluefoot.scripts</groupId>
   <artifactId>utils</artifactId>
   <packaging>jar</packaging>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.4</version>
 
-  <name>general utility classes. totally for fun.</name>
+  <name>general utility classes</name>
   <url>http://bluefoot.info</url>
 
   <inceptionYear>2011</inceptionYear>
@@ -31,7 +31,7 @@ limitations under the License.
   <developers>
     <developer>
       <id>bluefoot</id>
-      <name>Blue Foot</name>
+      <name>Gewton Teixeira</name>
       <email>bluefoot.dev@gmail.com</email>
     </developer>
   </developers>
@@ -50,13 +50,14 @@ limitations under the License.
   </properties>
 
   <build>
+    <!-- 
     <resources>
       <resource>
         <directory>src/main/resources</directory>
         <targetPath>META-INF</targetPath>
       </resource>
-
     </resources>
+     -->
 
     <plugins>
       <plugin>
