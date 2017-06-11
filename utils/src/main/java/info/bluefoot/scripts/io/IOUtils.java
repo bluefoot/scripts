@@ -24,4 +24,21 @@ public class IOUtils {
         }
         return lines;
     }
+    
+    public static String readStreamAsString(InputStream stream) throws IOException {
+        StringBuilder lines = new StringBuilder();
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new InputStreamReader(stream));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                lines.append(line + System.getProperty("line.separator"));
+            }
+        } finally {
+            try {
+                reader.close();
+            } catch (Exception e) {}
+        }
+        return lines.toString();
+    }
 }
