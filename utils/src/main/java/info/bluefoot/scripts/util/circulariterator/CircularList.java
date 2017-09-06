@@ -95,19 +95,4 @@ public class CircularList<T> implements Iterable<T> {
             }
         };
     }
-    
-    public static void main(String[] args) throws InterruptedException {
-        LinkedList<Integer> l = new LinkedList<Integer>();
-        l.add(0);
-        l.add(90);
-        l.add(180);
-        l.add(270);
-//        ListIterator<Integer> i = l.listIterator();
-        CircularIterator<Integer> i = new CircularList<Integer>(l).iterator();
-        System.out.println(i.next() + "\t" + i.nextIndex() + ", " + i.previousIndex()); 
-        System.out.println(i.previous() + "\t" + i.nextIndex() + ", " + i.previousIndex());
-        System.out.println(i.next() + "\t" + i.nextIndex() + ", " + i.previousIndex());
-        System.out.println(i.next() + "\t" + i.nextIndex() + ", " + i.previousIndex());
-    }
-
 }

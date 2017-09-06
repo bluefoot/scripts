@@ -6,7 +6,7 @@
   <groupId>info.bluefoot.scripts</groupId>
   <artifactId>utils</artifactId>
   <packaging>jar</packaging>
-  <version>0.6</version>
+  <version>0.7</version>
 
   <name>general utility classes</name>
   <url>http://bluefoot.info</url>
