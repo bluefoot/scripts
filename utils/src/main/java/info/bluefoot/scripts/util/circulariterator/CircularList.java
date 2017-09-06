@@ -23,11 +23,15 @@ l.add(270);
 CircularIterator<Integer> i = new CircularList<Integer>(l).iterator();
 System.out.println(i.next() + "\t" + i.nextIndex() + ", " + i.previousIndex()); 
 System.out.println(i.previous() + "\t" + i.nextIndex() + ", " + i.previousIndex());
+System.out.println(i.previous() + "\t" + i.nextIndex() + ", " + i.previousIndex());
+System.out.println(i.next() + "\t" + i.nextIndex() + ", " + i.previousIndex());
 System.out.println(i.next() + "\t" + i.nextIndex() + ", " + i.previousIndex());
 System.out.println(i.next() + "\t" + i.nextIndex() + ", " + i.previousIndex());
     
 // ~ output:
 0   1, 3
+270 0, 2
+180 3, 1
 270 0, 2
 0   1, 3
 90  2, 0
