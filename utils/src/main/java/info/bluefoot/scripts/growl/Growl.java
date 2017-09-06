@@ -6,7 +6,7 @@ import java.io.IOException;
 
 /**
  * Usage: <tt>Growl.getGrowl("your app name")</tt> <em>(will be used as a title too)</em>
- * @author bluefoot
+ * @author gewton
  *
  */
 public class Growl {

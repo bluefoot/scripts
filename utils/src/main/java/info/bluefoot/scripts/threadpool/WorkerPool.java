@@ -22,7 +22,7 @@ import org.slf4j.LoggerFactory;
  * Initially based on <a href="http://www.ibm.com/developerworks/library/j-jtp0730/index.html">this article</a>.
  * 
  * 
- * @author bluefoot
+ * @author gewton
  *
  */
 public class WorkerPool {
